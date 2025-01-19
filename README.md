@@ -36,7 +36,8 @@ L'application inclut également des fonctionnalités pour annuler les transactio
    cd gestioncaisse 
 2. Compilez les fichiers Java :
 
-    javac Caisse.java Gestion.java Banque.java GestionCaisse.java
+    ```bash
+     javac Caisse.java Gestion.java Banque.java GestionCaisse.java
    
 
 3. Exécutez le programme :
@@ -59,4 +60,4 @@ Après avoir démarré le programme, un menu apparaîtra avec les options dispon
 9. Annuler la dernière transaction d'une caisse
 10. Quitter
 
-Pour effectuer une action, saisissez le numéro correspondant à l'option de
+Pour effectuer une action, saisissez le numéro correspondant à l'option 
