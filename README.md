@@ -36,11 +36,7 @@ L'application inclut également des fonctionnalités pour annuler les transactio
    cd gestioncaisse 
 2. Compilez les fichiers Java :
 
-   ```bash
- javac 
-Caisse.java
-Gestion.java
-Banque.java GestionCaisse.java
+   ```bash javac Caisse.java Gestion.java Banque.java GestionCaisse.java
    
 
 3. Exécutez le programme :
