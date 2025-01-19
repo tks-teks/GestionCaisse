@@ -33,7 +33,7 @@ L'application inclut également des fonctionnalités pour annuler les transactio
 
    ```bash
    git clone https://github.com/Tsiemi-eude/gestioncaisse.git
-   cd gestioncaisse
+   cd gestioncaisse 
 2. Compilez les fichiers Java :
 
    ```bash
@@ -41,13 +41,13 @@ L'application inclut également des fonctionnalités pour annuler les transactio
 Caisse.java
 Gestion.java
 Banque.java GestionCaisse.java
-   ```
+   
 
 3. Exécutez le programme :
 
    ```bash
    java GestionCaisse
-   ``
+   
 ## Utilisation
 
 Après avoir démarré le programme, un menu apparaîtra avec les options disponibles :
