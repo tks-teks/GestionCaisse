@@ -34,3 +34,33 @@ L'application inclut également des fonctionnalités pour annuler les transactio
    ```bash
    git clone https://github.com/Tsiemi-eude/gestioncaisse.git
    cd gestioncaisse
+2. Compilez les fichiers Java :
+
+   ```bash
+ javac 
+Caisse.java
+Gestion.java
+Banque.java GestionCaisse.java
+   ```
+
+3. Exécutez le programme :
+
+   ```bash
+   java GestionCaisse
+   ``
+## Utilisation
+
+Après avoir démarré le programme, un menu apparaîtra avec les options disponibles :
+
+1. Ajouter une caisse
+2. Ajouter une banque
+3. Supprimer une caisse
+4. Supprimer une banque
+5. Enregistrer une entrée d'argent
+6. Enregistrer une sortie d'argent
+7. Réaliser un virement entre caisses
+8. Afficher le solde d'une caisse
+9. Annuler la dernière transaction d'une caisse
+10. Quitter
+
+Pour effectuer une action, saisissez le numéro correspondant à l'option de
