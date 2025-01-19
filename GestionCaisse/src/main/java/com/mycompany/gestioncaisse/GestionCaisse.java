@@ -23,7 +23,9 @@ public class GestionCaisse {
 
     public static void menu() {
         while (true) {
-            System.out.println("\n=== Menu ===");
+            System.out.println("**************");
+            System.out.println("*=== Menu ===*");
+            System.out.println("**************");
             System.out.println("1. Ajouter une caisse");
             System.out.println("2. Ajouter une banque");
             System.out.println("3. Supprimer une caisse");
