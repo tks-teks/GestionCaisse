@@ -4,6 +4,8 @@
  */
 package com.mycompany.gestioncaisse;
 
+import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author hp
@@ -11,15 +13,24 @@ package com.mycompany.gestioncaisse;
 public class Banque {
     private String nom;
     private double solde;
+    private List<Caisse> caissesAssociees = new ArrayList<>();
 
     public Banque(String nom) {
         this.nom = nom;
         this.solde = 0.0;
     }
 
-    public void virerVersBanque(double montant) {
-        solde += montant;
-        System.out.println("Virement de " + montant + " vers la banque " + nom+"effectuer avec succes");
+    public void ajouterCaisse(Caisse caisse) {
+        if (!caissesAssociees.contains(caisse)) {
+            caissesAssociees.add(caisse);
+            System.out.println("Caisse " + caisse.getNom() + " associee à la banque " + nom);
+        } else {
+            System.out.println("Cette caisse est deja associee à la banque " + nom);
+        }
+    }
+
+    public List<Caisse> getCaissesAssociees() {
+        return caissesAssociees;
     }
 
     public double getSolde() {
@@ -28,10 +39,5 @@ public class Banque {
 
     public String getNom() {
         return nom;
-    }
-
-    public void annulerVirement(double montant) {
-        solde -= montant;
-        System.out.println("Annulation du virement de " + montant + " de la banque " + nom);
     }
 }
