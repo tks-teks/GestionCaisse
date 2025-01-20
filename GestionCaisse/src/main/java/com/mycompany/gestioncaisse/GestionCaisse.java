@@ -5,6 +5,7 @@
 package com.mycompany.gestioncaisse;
 
 import java.util.Scanner;
+import com.mycompany.gestioncaisse.*;
 /**
  *
  * @author hp
@@ -28,16 +29,17 @@ public class GestionCaisse {
             System.out.println("**************");
             System.out.println("1. Ajouter une caisse");
             System.out.println("2. Ajouter une banque");
-            System.out.println("3. Supprimer une caisse");
-            System.out.println("4. Supprimer une banque");
-            System.out.println("5. Listes des Caisses");
-            System.out.println("6. Listes des Banques");
-            System.out.println("7. Enregistrer une entree d'argent");
-            System.out.println("8. Enregistrer une sortie d'argent");
-            System.out.println("9. Realiser un virement entre caisses");
-            System.out.println("10. Afficher le solde d'une caisse");
-            System.out.println("11. Annuler la derniere transaction d'une caisse");
-            System.out.println("12. Quitter");
+            System.out.println("3. Associer une caisse a une banque");
+            System.out.println("4. Supprimer une caisse");
+            System.out.println("5. Supprimer une banque");
+            System.out.println("6. Liste des Caisses et Responsables");
+            System.out.println("7. Liste des Banques et leurs Caisses");
+            System.out.println("8. Enregistrer une entree d'argent");
+            System.out.println("9. Enregistrer une sortie d'argent");
+            System.out.println("10. Realiser un virement entre caisses");
+            System.out.println("11. Afficher le solde d'une caisse");
+            System.out.println("12. Annuler la derniere transaction d'une caisse");
+            System.out.println("13. Quitter");
             System.out.print("Choisissez une option : ");
 
             int choix = scanner.nextInt();
@@ -57,18 +59,29 @@ public class GestionCaisse {
                     gestionCaisse.ajouterBanque(nomBanque);
                     break;
                 case 3:
-                    System.out.print("Nom de la caisse a supprimer : ");
+                    System.out.print("Nom de la banque : ");
+                    String nomBanqueAssoc = scanner.nextLine();
+                    System.out.print("Nom de la caisse à associer : ");
+                    String nomCaisseAssoc = scanner.nextLine();
+                    gestionCaisse.ajouterCaisseABanque(nomBanqueAssoc, nomCaisseAssoc);;
+                    break;
+                case 4:
+                    System.out.print("Nom de la caisse à supprimer : ");
                     String caisseASupprimer = scanner.nextLine();
                     gestionCaisse.supprimerCaisse(caisseASupprimer);
                     break;
-                case 4:
-                    System.out.print("Nom de la banque a supprimer : ");
+                case 5:
+                    System.out.print("Nom de la banque à supprimer : ");
                     String banqueASupprimer = scanner.nextLine();
                     gestionCaisse.supprimerBanque(banqueASupprimer);
                     break;
-                case 5:
-                case 6
+                case 6:
+                    gestionCaisse.listerCaisses();
+                    break;
                 case 7:
+                    gestionCaisse.listerBanquesEtCaisses();
+                    break;
+                case 8:
                     System.out.print("Nom de la caisse : ");
                     String caisseEntrerNom = scanner.nextLine();
                     Caisse caisseEntrer = gestionCaisse.trouverCaisse(caisseEntrerNom);
@@ -77,22 +90,22 @@ public class GestionCaisse {
                         double montantEntrer = scanner.nextDouble();
                         caisseEntrer.entrerArgent(montantEntrer);
                     } else {
-                        System.out.println("Caisse non trouvee.");
+                        System.out.println("Caisse non trouvée.");
                     }
                     break;
-                case 8:
+                case 9:
                     System.out.print("Nom de la caisse : ");
                     String caisseSortirNom = scanner.nextLine();
                     Caisse caisseSortir = gestionCaisse.trouverCaisse(caisseSortirNom);
                     if (caisseSortir != null) {
-                        System.out.print("Montant a sortir : ");
+                        System.out.print("Montant à sortir : ");
                         double montantSortir = scanner.nextDouble();
                         caisseSortir.sortirArgent(montantSortir);
                     } else {
-                        System.out.println("Caisse non trouvee.");
+                        System.out.println("Caisse non trouvée.");
                     }
                     break;
-                case 9:
+                case 10:
                     System.out.print("Nom de la caisse source : ");
                     String caisseSourceNom = scanner.nextLine();
                     Caisse caisseSource = gestionCaisse.trouverCaisse(caisseSourceNom);
@@ -100,14 +113,14 @@ public class GestionCaisse {
                     String caisseDestinationNom = scanner.nextLine();
                     Caisse caisseDestination = gestionCaisse.trouverCaisse(caisseDestinationNom);
                     if (caisseSource != null && caisseDestination != null) {
-                        System.out.print("Montant a transferer : ");
+                        System.out.print("Montant à transférer : ");
                         double montantVirement = scanner.nextDouble();
                         gestionCaisse.virementCaisseVersCaisse(caisseSource, caisseDestination, montantVirement);
                     } else {
-                        System.out.println(" caisses non trouvees.");
+                        System.out.println("Caisses non trouvées.");
                     }
                     break;
-                case 10:
+                case 11:
                     System.out.print("Nom de la caisse : ");
                     String caisseSoldeNom = scanner.nextLine();
                     Caisse caisseSolde = gestionCaisse.trouverCaisse(caisseSoldeNom);
@@ -117,7 +130,7 @@ public class GestionCaisse {
                         System.out.println("Caisse non trouvée.");
                     }
                     break;
-                case 11:
+                case 12:
                     System.out.print("Nom de la caisse : ");
                     String caisseAnnulerNom = scanner.nextLine();
                     Caisse caisseAnnuler = gestionCaisse.trouverCaisse(caisseAnnulerNom);
@@ -127,12 +140,12 @@ public class GestionCaisse {
                         System.out.println("Caisse non trouvée.");
                     }
                     break;
-                case 12:
+                case 13:
                     System.out.println("Au revoir !");
                     scanner.close();
                     return;
                 default:
-                    System.out.println("Option invalide. Veuillez reessayer.");
+                    System.out.println("Option invalide. Veuillez réessayer.");
                     break;
             }
         }
