@@ -51,15 +51,12 @@ Après avoir démarré le programme, un menu apparaîtra avec les options dispon
 
 1. Ajouter une caisse
 2. Ajouter une banque
-3. liste des caisses et noms des propietaires
-4. listes des banques 
-5. Supprimer une caisse
-6. Supprimer une banque
-7. Enregistrer une entrée d'argent
-8. Enregistrer une sortie d'argent
-9. Réaliser un virement entre caisses
-10. Afficher le solde d'une caisse
-11. Annuler la dernière transaction d'une caisse
-12. Quitter
-
+3. Supprimer une caisse
+4. Supprimer une banque
+5. Enregistrer une entrée d'argent
+6. Enregistrer une sortie d'argent
+7. Réaliser un virement entre caisses
+8. Afficher le solde d'une caisse
+9. Annuler la dernière transaction d'une caisse
+10. Quitter
 Pour effectuer une action, saisissez le numéro correspondant à l'option 
