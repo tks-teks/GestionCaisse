@@ -27,7 +27,7 @@ public class Caisse {
     public void entrerArgent(double montant) {
         solde += montant;
         historiqueTransactions.add("Entrée : " + montant);
-        System.out.println("Entrée de " + montant + " dans la caisse " + nom);
+        System.out.println("Entree de " + montant + " dans la caisse " + nom);
     }
 
     public void sortirArgent(double montant) {
@@ -65,13 +65,13 @@ public class Caisse {
 
             if (type.equals("Entrée")) {
                 solde -= montant;
-                System.out.println("Annulation de l'entrée de " + montant + " dans la caisse " + nom);
+                System.out.println("Annulation de l'entree de " + montant + " dans la caisse " + nom);
             } else {
                 solde += montant;
                 System.out.println("Annulation de la sortie de " + montant + " de la caisse " + nom);
             }
         } else {
-            System.out.println("Aucune transaction à annuler.");
+            System.out.println("Aucune transaction a annuler.");
         }
     }
 }
